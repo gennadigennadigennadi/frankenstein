@@ -1,0 +1,25 @@
+{
+    "name": "gennadijanzen/gennadijanzen",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gennadi McKelvey",
+            "email": "gennadi.mckelvey@qossmic.com"
+        }
+    ],
+    "require": {
+        "symfony/dependency-injection": "^6.1",
+        "laminas/laminas-stratigility": "^3.8",
+        "nyholm/psr7": "^1.5",
+        "nyholm/psr7-server": "^1.0",
+        "symfony/config": "^6.1",
+        "league/route": "^5.1"
+    },
+    "require-dev": {
+        "filp/whoops": "^2.14"
+    }
+}
