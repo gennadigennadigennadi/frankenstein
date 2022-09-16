@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App;
 
 use App\Factory\ContainerFactory;
@@ -13,11 +15,9 @@ final class Application
 {
     public function run(): void
     {
-        $serverRequest = (new ServerRequestFactory())->build();
         $container = (new ContainerFactory())->build();
+        $serverRequest = (new ServerRequestFactory())->build();
         $router = $container->get(Router::class);
-
-        (require_once __DIR__ . '/../config/routes.php')($router);
 
         $pipe = new MiddlewarePipe();
         $pipe->pipe(new ErrorMiddleware());

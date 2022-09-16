@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Handler;
 
 use Nyholm\Psr7\Factory\Psr17Factory;

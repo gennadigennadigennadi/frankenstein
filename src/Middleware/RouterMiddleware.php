@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Middleware;
 
 use League\Route\Router;
@@ -12,18 +14,18 @@ use League\Route\Strategy\ApplicationStrategy;
 
 final class RouterMiddleware implements MiddlewareInterface
 {
-	public function __construct(
-		private Router $router,
-		private ContainerInterface $container,
-	) {
-	}
-	public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
-	{
-		$strategy = new ApplicationStrategy();
-		$strategy->setContainer($this->container);
+    public function __construct(
+        private Router $router,
+        private ContainerInterface $container,
+    ) {
+    }
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
+    {
+        $strategy = new ApplicationStrategy();
+        $strategy->setContainer($this->container);
 
-		$this->router->setStrategy($strategy);
+        $this->router->setStrategy($strategy);
 
-		return $this->router->dispatch($request);
-	}
+        return $this->router->dispatch($request);
+    }
 }

@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Handler;
 
+use App\Generator\HelloGenerator;
 use App\Generator\StringGenerator;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use App\Generator\RandomTextGenerator;
@@ -13,7 +16,7 @@ use Symfony\Component\DependencyInjection\Attribute\Autowire;
 final class HelloWorldHandler implements RequestHandlerInterface
 {
     public function __construct(
-        #[Autowire(service: RandomTextGenerator::class)]
+        #[Autowire(service: HelloGenerator::class)]
         private StringGenerator $stringGenerator,
         private Psr17Factory $psr17Factory,
     ) {
