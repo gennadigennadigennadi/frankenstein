@@ -7,7 +7,6 @@ namespace App\Handler;
 use App\Generator\HelloGenerator;
 use App\Generator\StringGenerator;
 use Nyholm\Psr7\Factory\Psr17Factory;
-use App\Generator\RandomTextGenerator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;

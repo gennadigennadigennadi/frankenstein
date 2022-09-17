@@ -3,19 +3,20 @@
 declare(strict_types=1);
 
 $finder = PhpCsFixer\Finder::create()
-    ->in(__DIR__)
-    ->append([__FILE__]);
+    ->in(['.'])
+    ->exclude(['var']);
 
 $config = new PhpCsFixer\Config();
 
-return $config->setRules([
-    '@PHP80Migration' => true,
-    '@PHP80Migration:risky' => true,
-    '@PSR12' => true,
-    '@PSR12:risky' => true,
-    'strict_param' => true,
-    'array_syntax' => [
-        'syntax' => 'short', ], ]
-)
+return $config
     ->setRiskyAllowed(true)
-    ->setFinder($finder);
+    ->setFinder($finder)
+    ->setRules([
+        '@PHP80Migration' => true,
+        '@PHP80Migration:risky' => true,
+        '@PSR12' => true,
+        '@PSR12:risky' => true,
+        '@Symfony' => true,
+        'strict_param' => true,
+        'array_syntax' => [ 'syntax' => 'short', ], 
+    ]);

@@ -18,7 +18,8 @@
         "nyholm/psr7-server": "^1.0",
         "symfony/config": "^6.1",
         "league/route": "^5.1",
-        "symfony/console": "^6.1"
+        "symfony/console": "^6.1",
+        "laminas/laminas-httphandlerrunner": "^2.1"
     },
     "require-dev": {
         "filp/whoops": "^2.14",

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use League\Route\Router;
 use App\Handler\HelloWorldHandler;
 use App\Handler\SayHandler;
+use League\Route\Router;
 
 return static function (Router $router): void {
     $router->get('/', [HelloWorldHandler::class, 'handle']);

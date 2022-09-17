@@ -15,7 +15,7 @@ use Whoops\Handler\PrettyPageHandler;
 final class ErrorMiddleware implements MiddlewareInterface
 {
     public function __construct(
-        private Psr17Factory $factory = new Psr17Factory(),
+        private Psr17Factory $factory,
     ) {
     }
 

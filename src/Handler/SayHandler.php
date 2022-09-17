@@ -27,7 +27,7 @@ final class SayHandler implements RequestHandlerInterface
         $id = $request->getAttribute('id');
 
         $responseBody = $this->streamFactoryInterface
-            ->createStream('Id: ' . $id);
+            ->createStream('Id: '.$id);
 
         return $this->responseFactoryInterface
             ->createResponse(200)
