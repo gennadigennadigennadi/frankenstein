@@ -23,8 +23,8 @@ final class RequestHandlerFactory
         $strategy->setContainer($this->container);
 
         $router = new Router();
-        (require_once $this->configDir.'/routes.php')($router);
         $router->setStrategy($strategy);
+        (require $this->configDir.'/routes.php')($router);
 
         return $router;
     }
