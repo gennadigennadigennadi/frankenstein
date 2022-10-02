@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use App\Application;
-use App\Factory\MiddlewareFactory;
-use App\Factory\RequestHandlerFactory;
-use App\Factory\ServerRequestFactory;
+use App\Infrastucture\Factory\MiddlewareFactory;
+use App\Infrastucture\Factory\RequestHandlerFactory;
+use App\Infrastucture\Factory\ServerRequestFactory;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -31,10 +31,10 @@ return static function (ContainerConfigurator $container): void {
 
     $services
         ->load('App\\', '../src/*')
-        ->exclude('../src/{Handler,Entity,Tests}');
+    ;
 
     $services
-        ->load('App\\Handler\\', '../src/Handler/*')
+        ->load('App\\Application\\Handler\\', '../src/Application/Handler/*')
         ->public();
 
     $services->alias(ContainerInterface::class, 'service_container');

@@ -14,8 +14,8 @@ use Psr\Http\Server\RequestHandlerInterface;
 final class Application
 {
     public function __construct(
-        private MiddlewareInterface $middleware,
-        private ServerRequestInterface $serverRequest,
+        private readonly MiddlewareInterface $middleware,
+        private readonly ServerRequestInterface $serverRequest,
     ) {
     }
 

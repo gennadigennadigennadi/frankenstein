@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Factory;
+namespace App\Infrastucture\Factory;
 
-use App\Middleware\ErrorMiddleware;
-use App\Middleware\RequestHandlerMiddleware;
-use App\Middleware\SessionMiddleware;
-use App\Middleware\TimerMiddleware;
+use App\Infrastucture\Middleware\ErrorMiddleware;
+use App\Infrastucture\Middleware\RequestHandlerMiddleware;
+use App\Infrastucture\Middleware\SessionMiddleware;
+use App\Infrastucture\Middleware\TimerMiddleware;
 use Laminas\Stratigility\MiddlewarePipe;
 use Psr\Http\Server\MiddlewareInterface;
 

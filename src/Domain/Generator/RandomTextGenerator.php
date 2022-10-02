@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Generator;
+namespace App\Domain\Generator;
 
 final class RandomTextGenerator implements StringGenerator
 {

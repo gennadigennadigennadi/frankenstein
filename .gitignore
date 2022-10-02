@@ -1,3 +1,4 @@
 vendor
 .php-cs-fixer.cache
 var
+.deptrac.cache

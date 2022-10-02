@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Handler;
+namespace App\Application\Handler;
 
-use App\Generator\HelloGenerator;
-use App\Generator\StringGenerator;
+use App\Domain\Generator\HelloGenerator;
+use App\Domain\Generator\StringGenerator;
 use Nyholm\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
