@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Application\Handler\HelloWorldHandler;
-use App\Application\Handler\SayHandler;
+use App\Infrastructure\Handler\HelloWorldHandler;
+use App\Infrastructure\Handler\SayHandler;
 use League\Route\Router;
 
 return static function (Router $router): void {

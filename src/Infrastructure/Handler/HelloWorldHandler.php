@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Handler;
+namespace App\Infrastructure\Handler;
 
 use App\Domain\Generator\HelloGenerator;
 use App\Domain\Generator\StringGenerator;

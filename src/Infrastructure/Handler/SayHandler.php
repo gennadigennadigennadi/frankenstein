@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Handler;
+namespace App\Infrastructure\Handler;
 
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Message\ResponseFactoryInterface;

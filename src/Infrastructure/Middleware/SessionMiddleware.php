@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastucture\Middleware;
+namespace App\Infrastructure\Middleware;
 
-use DateTimeImmutable;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
-
-final class TimerMiddleware implements MiddlewareInterface
+final class SessionMiddleware implements MiddlewareInterface
 {
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        $start = new DateTimeImmutable();
-        $response = $handler->handle($request);
-        $end = new DateTimeImmutable();
+        if (PHP_SESSION_ACTIVE !== session_status()) {
+            session_name('frankenstein');
+            session_start();
+        }
 
-        setcookie('timer', $end->diff($start)->format('%f'));
+        $response = $handler->handle($request);
+
         session_write_close();
 
         return $response;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastucture\Factory;
+namespace App\Infrastructure\Factory;
 
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Config\ConfigCache;
@@ -23,7 +23,7 @@ final class ContainerFactory
 
     public function build(): ContainerInterface
     {
-        $containerConfigCache = new ConfigCache($this->cacheDir.DIRECTORY_SEPARATOR.self::COMPILED_CONTAINER, true);
+        $containerConfigCache = new ConfigCache($this->cacheDir . DIRECTORY_SEPARATOR . self::COMPILED_CONTAINER, true);
 
         if (!$containerConfigCache->isFresh()) {
             $containerBuilder = new ContainerBuilder();
@@ -38,7 +38,7 @@ final class ContainerFactory
             );
         }
 
-        require_once $this->cacheDir.DIRECTORY_SEPARATOR.self::COMPILED_CONTAINER;
+        require_once $this->cacheDir . DIRECTORY_SEPARATOR . self::COMPILED_CONTAINER;
 
         return new \MyCachedContainer();
     }

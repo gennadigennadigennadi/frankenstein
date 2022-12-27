@@ -2,14 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastucture\Middleware;
+namespace App\Infrastructure\Middleware;
 
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Throwable;
 use Whoops\Handler\PrettyPageHandler;
 
 final class ErrorMiddleware implements MiddlewareInterface
@@ -28,7 +27,7 @@ final class ErrorMiddleware implements MiddlewareInterface
 
         try {
             return $handler->handle($request);
-        } catch (Throwable $e) {
+        } catch (\Throwable $e) {
             return $this->factory
                 ->createResponse(500)
                 ->withBody(

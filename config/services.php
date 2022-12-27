@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use App\Application;
-use App\Infrastucture\Factory\MiddlewareFactory;
-use App\Infrastucture\Factory\RequestHandlerFactory;
-use App\Infrastucture\Factory\ServerRequestFactory;
+use App\Infrastructure\Factory\MiddlewareFactory;
+use App\Infrastructure\Factory\RequestHandlerFactory;
+use App\Infrastructure\Factory\ServerRequestFactory;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -20,8 +20,8 @@ return static function (ContainerConfigurator $container): void {
     $container
         ->parameters()
         ->set('rootDir', dirname(__DIR__))
-        ->set('configDir', param('rootDir').'/config/')
-        ->set('cacheDir', param('rootDir').'/var/');
+        ->set('configDir', param('rootDir') . '/config/')
+        ->set('cacheDir', param('rootDir') . '/var/');
 
     $services = $container->services();
     $services->defaults()
@@ -29,12 +29,10 @@ return static function (ContainerConfigurator $container): void {
         ->autowire()
         ->bind('string $configDir', param('configDir'));
 
-    $services
-        ->load('App\\', '../src/*')
-    ;
+    $services->load('App\\', '../src/*');
 
     $services
-        ->load('App\\Application\\Handler\\', '../src/Application/Handler/*')
+        ->load('App\\Infrastructure\\Handler\\', '../src/Infrastructure/Handler/*')
         ->public();
 
     $services->alias(ContainerInterface::class, 'service_container');

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App;
 
 use Laminas\HttpHandlerRunner\Emitter\SapiEmitter;
-use LogicException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -26,7 +25,7 @@ final class Application
             new class() implements RequestHandlerInterface {
                 public function handle(ServerRequestInterface $request): ResponseInterface
                 {
-                    throw new LogicException();
+                    throw new \LogicException();
                 }
             },
         );

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastucture\Factory;
+namespace App\Infrastructure\Factory;
 
 use League\Route\Router;
 use League\Route\Strategy\ApplicationStrategy;

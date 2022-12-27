@@ -12,6 +12,7 @@
         }
     ],
     "require": {
+        "php": "^8.2",
         "symfony/dependency-injection": "^6.1",
         "laminas/laminas-stratigility": "^3.8",
         "nyholm/psr7": "^1.5",
@@ -23,7 +24,13 @@
     },
     "require-dev": {
         "filp/whoops": "^2.14",
-        "friendsofphp/php-cs-fixer": "^3.11",
-        "qossmic/deptrac-shim": "^0.24.0"
-    }
+        "friendsofphp/php-cs-fixer": "^3.13",
+        "qossmic/deptrac": "dev-implement-configbuilder"
+    } ,
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/gennadigennadigennadi/deptrac"
+        }
+    ]
 }

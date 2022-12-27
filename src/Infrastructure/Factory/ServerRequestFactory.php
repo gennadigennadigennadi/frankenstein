@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastucture\Factory;
+namespace App\Infrastructure\Factory;
 
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7Server\ServerRequestCreator;

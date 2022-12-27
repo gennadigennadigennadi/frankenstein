@@ -12,10 +12,10 @@ deptrac:
       collectors:
         - type: directory
           value: src/Domain/.*
-    - name: Infrastucture
+    - name: Infrastructure
       collectors:
         - type: directory
-          value: src/Infrastucture/.*
+          value: src/Infrastructure/.*
   ruleset: 
     Infrastucture:
       - Application
